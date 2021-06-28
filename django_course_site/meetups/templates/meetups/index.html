@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>All meetups</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'meetups/styles/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'meetups/styles/all-meetups.css' %}" />
+  </head>
+  <body>
+    <header id="main-header" >
+      <nav>
+        <a href="/meetups" id="main-logo"> Django Meetups </a>
+        <h1>Great meetups coming up</h1>
+        <p>Find one that suits your needs</p>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Upcoming Meetups</h2>
+        <ol>
+          {% for meetup in meetups %}
+          <li class="meetup-item">
+            <article>
+              <div class="meetup-summary">
+                <div class="meetup-image">
+                  <img src="" alt="" />
+                </div>
+                <div class="meetup-details">
+                  <h3>{{meetup.title }}</h3>
+                  <address>{{meetup.location }}</address>
+                </div>
+              </div>
+              <div class="meetup=-actions">
+                  <a href="" class="btn"> More Detials</a>
+              </div>
+            </article>
+          </li>
+          {% endfor %}
+        </ol>
+      </section>
+    </main>
+    <!-- <h1>Hello World</h1>
+    {% if showmeetups %} {% for meetup in meetups %}
+    <h3>{{meetup.title }}</h3>
+    {% endfor %} {% endif %} -->
+  </body>
+</html>
