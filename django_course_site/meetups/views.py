@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'meetups/index.html', {'showmeetups':True,'meetups':meetups})
 
 
-def meetup_detials(request, meetup_slug):
+def meetup_details(request, meetup_slug):
     selected_meetup = {
         'title': 'second meetup',
         'description': 'this is the first meetup'
