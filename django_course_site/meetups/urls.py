@@ -3,9 +3,9 @@ from .views import index, meetup_details
 
 urlpatterns = [
 path(
-    'meetups/', index
+    'meetups/', index, name= " all-meetups"
 ),
 path(
-    'meetups/<slug:meetup_slug>', meetup_details
+    'meetups/<slug:meetup_slug>', meetup_details, name='meetup-details'
 )
 ]
